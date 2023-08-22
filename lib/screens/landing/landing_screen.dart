@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sushiman_app/components/button.dart';
 import 'package:sushiman_app/screens/home/home_screen.dart';
+import 'package:sushiman_app/themes/colors.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -11,7 +12,7 @@ class LandingScreen extends StatelessWidget {
     return Scaffold(
       // logo
       appBar: AppBar(
-        backgroundColor: const Color(0xffb1454a),
+        backgroundColor: primaryColor,
         title: Text(
           "SUSHIMAN",
           style: GoogleFonts.playfairDisplay(
@@ -65,6 +66,7 @@ class LandingScreen extends StatelessWidget {
             MyButton(
               text: "Get Started",
               icon: Icons.arrow_forward,
+              isIconRequired: true,
               onTap: () {
                 // navigate
                 Navigator.pushReplacement(

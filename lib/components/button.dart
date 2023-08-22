@@ -5,12 +5,18 @@ class MyButton extends StatelessWidget {
   final String text;
   final IconData icon;
   final void Function()? onTap;
+  final bool isIconRequired;
+  final double paddingVertical;
+  final double paddingHorizontal;
 
   const MyButton({
     super.key,
     required this.onTap,
     required this.text,
-    required this.icon,
+    this.icon = Icons.arrow_forward,
+    this.isIconRequired = false,
+    this.paddingVertical = 20,
+    this.paddingHorizontal = 20,
   });
 
   @override
@@ -18,7 +24,10 @@ class MyButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.symmetric(
+          vertical: paddingVertical,
+          horizontal: paddingHorizontal,
+        ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(50),
           color: const Color(0xffbd6367),
@@ -36,10 +45,12 @@ class MyButton extends StatelessWidget {
             const SizedBox(
               width: 15,
             ),
-            Icon(
-              icon,
-              color: Colors.white,
-            ),
+            isIconRequired
+                ? Icon(
+                    icon,
+                    color: Colors.white,
+                  )
+                : const SizedBox(),
           ],
         ),
       ),
