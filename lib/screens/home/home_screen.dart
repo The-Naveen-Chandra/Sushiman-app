@@ -156,57 +156,19 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
 
-            // // menu list
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            //   child: Text(
-            //     "Menu List",
-            //     style: GoogleFonts.roboto(
-            //       fontWeight: FontWeight.w500,
-            //       fontSize: 17,
-            //       color: Colors.grey.shade800,
-            //     ),
-            //   ),
-            // ),
+            Container(
+              padding: const EdgeInsets.only(left: 25),
+              height: MediaQuery.of(context).size.height / 19.5,
+              width: MediaQuery.of(context).size.width,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: categories.length,
+                itemBuilder: (context, index) {
+                  bool isSelected = selectedMenu == categories[index];
+                  var category = categories[index];
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              child: Row(
-                children: categories.map((category) {
-                  bool isSelected = selectedMenu == category;
-                  return GestureDetector(
-                    onTap: () => selectCategory(category),
-                    child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 40, vertical: 10),
-                        margin: const EdgeInsets.only(right: 10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Row(
-                          children: [
-                            Image.asset(
-                              category.imageSrc,
-                              height: 23,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              category.name,
-                              style: GoogleFonts.poppins(
-                                color: isSelected
-                                    ? primaryColor
-                                    : Colors.grey.shade500,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ],
-                        )),
-                  );
-                }).toList(),
+                  return menuTile(category, isSelected);
+                },
               ),
             ),
 
@@ -215,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             SizedBox(
-              height: 210,
+              height: MediaQuery.of(context).size.height / 3.6,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -331,6 +293,40 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.grey.shade500,
                   ),
                 ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // menu tile
+  GestureDetector menuTile(Menu category, bool isSelected) {
+    return GestureDetector(
+      onTap: () => selectCategory(category),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+        margin: const EdgeInsets.only(right: 10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Row(
+          children: [
+            Image.asset(
+              category.imageSrc,
+              height: 23,
+            ),
+            const SizedBox(
+              width: 10,
+            ),
+            Text(
+              category.name,
+              style: GoogleFonts.poppins(
+                color: isSelected ? primaryColor : Colors.grey.shade500,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ],

@@ -10,17 +10,48 @@ class Food {
     required this.imageSrc,
     required this.rating,
   });
-
-  String get _name => name;
-
-  String get _price => price;
-
-  String get _imageSrc => imageSrc;
-
-  String get _rating => rating;
 }
 
 List<Food> sushiFood = [
+  // tuna sushi
+  Food(
+    name: "Egg Sushi",
+    price: "23.00",
+    imageSrc: "assets/images/sushi_egg_round.png",
+    rating: "4.5",
+  ),
+
+  Food(
+    name: "Sushi 1",
+    price: "21.00",
+    imageSrc: "assets/images/sushi_1.png",
+    rating: "4.7",
+  ),
+
+  Food(
+    name: "Sushi 2",
+    price: "21.00",
+    imageSrc: "assets/images/sushi_2.png",
+    rating: "4.7",
+  ),
+  Food(
+    name: "Sushi 3",
+    price: "21.00",
+    imageSrc: "assets/images/sushi_3.png",
+    rating: "4.7",
+  ),
+  Food(
+    name: "Sushi 4",
+    price: "21.00",
+    imageSrc: "assets/images/sushi_4.png",
+    rating: "4.7",
+  ),
+  Food(
+    name: "Sushi 5",
+    price: "21.00",
+    imageSrc: "assets/images/sushi_5.png",
+    rating: "4.7",
+  ),
   // salmon sushi
   Food(
     name: "Salmon Sushi",
@@ -28,20 +59,14 @@ List<Food> sushiFood = [
     imageSrc: "assets/images/salmon_sushi.png",
     rating: "4.7",
   ),
-  // tuna sushi
-  Food(
-    name: "Tuna",
-    price: "23.00",
-    imageSrc: "assets/images/tuna.png",
-    rating: "4.5",
-  ),
+
 ];
 
 List<Food> rollsFood = [
   // salmon sushi
   Food(
     name: "Original Roll",
-    price: "21.00",
+    price: "18.00",
     imageSrc: "assets/images/roll_1.png",
     rating: "4.7",
   ),
@@ -76,6 +101,27 @@ List<Food> rollsFood = [
     name: "Tuna Rice Roll",
     price: "23.00",
     imageSrc: "assets/images/roll_6.png",
+    rating: "4.5",
+  ),
+];
+
+List<Food> eggFood = [
+  Food(
+    name: "Tuna Egg",
+    price: "23.00",
+    imageSrc: "assets/images/tuna.png",
+    rating: "4.5",
+  ),
+  Food(
+    name: "Orange Egg",
+    price: "23.00",
+    imageSrc: "assets/images/ball_1.png",
+    rating: "4.5",
+  ),
+  Food(
+    name: "Original Egg",
+    price: "23.00",
+    imageSrc: "assets/images/ball_2.png",
     rating: "4.5",
   ),
 ];

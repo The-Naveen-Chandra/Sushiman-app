@@ -18,7 +18,7 @@ class FoodTile extends StatelessWidget {
       onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(left: 25),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding: const EdgeInsets.only(left: 20, right: 5, top: 10, bottom: 10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -27,9 +27,31 @@ class FoodTile extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // image
-            Image.asset(
-              food.imageSrc,
-              height: 120,
+            Expanded(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Image.asset(
+                    food.imageSrc,
+                  ),
+                  // const SizedBox(
+                  //   width:,
+                  // ),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.favorite_border,
+                      color: Colors.grey.shade400,
+                      size: 28,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(
+              height: 25,
             ),
 
             // text
@@ -38,6 +60,7 @@ class FoodTile extends StatelessWidget {
               style: GoogleFonts.playfairDisplay(
                 fontSize: 16,
                 fontWeight: FontWeight.w700,
+                color: Colors.grey.shade800,
               ),
             ),
 
