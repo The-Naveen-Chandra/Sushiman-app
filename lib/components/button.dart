@@ -39,11 +39,11 @@ class MyButton extends StatelessWidget {
               text,
               style: GoogleFonts.poppins(
                 color: Colors.white,
-                fontSize: 16,
+                fontSize: 18,
               ),
             ),
             const SizedBox(
-              width: 15,
+              width: 10,
             ),
             isIconRequired
                 ? Icon(
