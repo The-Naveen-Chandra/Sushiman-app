@@ -12,12 +12,17 @@ class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
   Menu? selectedMenu;
-
+  void initState() {
+    super.initState();
+    // Set the initial selected category to the first category
+    selectedMenu = categories.isNotEmpty ? categories[0] : null;
+  }
   // navigate to food items details page
   void navigateToFoodDetail(int index) {
     Navigator.push(

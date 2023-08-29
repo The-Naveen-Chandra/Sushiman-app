@@ -12,5 +12,6 @@ List<Menu> categories = [
   Menu('Sushi', sushiFood, "assets/images/salmon_sushi.png"),
   Menu('Rolls', rollsFood, "assets/images/roll_1.png"),
   Menu('Eggs', eggFood, "assets/images/sushi_egg.png"),
+  Menu('Others', otherFood, "assets/images/wasabi.png"),
   // Add more categories here
 ];

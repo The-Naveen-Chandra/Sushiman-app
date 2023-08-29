@@ -59,7 +59,6 @@ List<Food> sushiFood = [
     imageSrc: "assets/images/salmon_sushi.png",
     rating: "4.7",
   ),
-
 ];
 
 List<Food> rollsFood = [
@@ -122,6 +121,39 @@ List<Food> eggFood = [
     name: "Original Egg",
     price: "23.00",
     imageSrc: "assets/images/ball_2.png",
+    rating: "4.5",
+  ),
+];
+
+List<Food> otherFood = [
+  Food(
+    name: "Dumplings",
+    price: "23.00",
+    imageSrc: "assets/images/dumplings.png",
+    rating: "4.5",
+  ),
+  Food(
+    name: "momo",
+    price: "23.00",
+    imageSrc: "assets/images/momo.png",
+    rating: "4.5",
+  ),
+  Food(
+    name: "Rice Cake",
+    price: "23.00",
+    imageSrc: "assets/images/rice_cake.png",
+    rating: "4.5",
+  ),
+  Food(
+    name: "Tea",
+    price: "23.00",
+    imageSrc: "assets/images/tea.png",
+    rating: "4.5",
+  ),
+  Food(
+    name: "Wasabi",
+    price: "23.00",
+    imageSrc: "assets/images/wasabi.png",
     rating: "4.5",
   ),
 ];

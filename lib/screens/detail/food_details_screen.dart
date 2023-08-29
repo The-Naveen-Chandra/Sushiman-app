@@ -19,6 +19,22 @@ class FoodDetailsScreen extends StatefulWidget {
 class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
   int quantity = 1;
 
+  // increase quantity
+  void increaseQuantity() {
+    setState(() {
+      quantity++;
+    });
+  }
+
+  // decrease quantity
+  void decreaseQuantity() {
+    setState(() {
+      if(quantity > 1) {
+        quantity --;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -176,11 +192,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           backgroundColor: primaryLightColor,
                           child: IconButton(
                             onPressed: () {
-                              setState(() {
-                                if(quantity > 1) {
-                                  quantity --;
-                                }
-                              });
+                              decreaseQuantity();
                             },
                             icon: const Icon(
                               Icons.remove,
@@ -188,14 +200,16 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15),
-                          child: Text(
-                            "$quantity",
-                            style: GoogleFonts.poppins(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
+                        SizedBox(
+                          width: 40,
+                          child: Center(
+                            child: Text(
+                              "$quantity",
+                              style: GoogleFonts.poppins(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ),
@@ -203,9 +217,7 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                           backgroundColor: primaryLightColor,
                           child: IconButton(
                             onPressed: () {
-                              setState(() {
-                                quantity++;
-                              });
+                              increaseQuantity();
                             },
                             icon: const Icon(
                               Icons.add,
